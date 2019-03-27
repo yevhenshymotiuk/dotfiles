@@ -69,7 +69,7 @@ bindsym Mod4+d exec rofi -show drun
 # bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
 
 # desktop wallpaper
-exec_always feh --bg-scale ~/Downloads/wall8.jpg
+exec_always feh --bg-scale ~/Downloads/wall1.jpg
 
 # blueman-applet
 exec_always "blueman-applet"
@@ -82,7 +82,7 @@ exec_always "setxkbmap -model pc104 -layout us,ru,ua -variant ,, -option grp:alt
 exec_always "~/.local/bin/layout"
 
 # touchpad
-exec_always "xinput set-prop 'Asus TouchPad' 308 1"
+exec_always "xinput set-prop 'Asus TouchPad' 'libinput Tapping Enabled' 1"
 
 # making screenshots
 bindsym Mod4+Print exec ~/.local/bin/maim.sh
