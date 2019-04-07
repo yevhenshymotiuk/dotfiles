@@ -83,6 +83,7 @@ exec_always "~/.local/bin/layout"
 
 # touchpad
 exec_always "xinput set-prop 'Asus TouchPad' 'libinput Tapping Enabled' 1"
+bindsym XF86TouchpadToggle exec touchpad-toggle
 
 # making screenshots
 bindsym Mod4+Print exec ~/.local/bin/maim.sh
