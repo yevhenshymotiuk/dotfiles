@@ -69,7 +69,7 @@ bindsym Mod4+d exec rofi -show drun
 # bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
 
 # desktop wallpaper
-exec_always feh --bg-scale ~/Downloads/wall1.jpg
+exec_always feh --bg-scale ~/Downloads/wall3.jpg
 
 # blueman-applet
 exec_always "blueman-applet"
