@@ -26,10 +26,10 @@ font pango:monospace 8
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -71,14 +71,8 @@ bindsym Mod4+d exec rofi -show drun
 # desktop wallpaper
 exec_always feh --bg-scale ~/Downloads/wall3.jpg
 
-# blueman-applet
-exec_always "blueman-applet"
-
-# nm-applet
-exec_always "nm-applet"
-
 # redshift
-exec_always "redshift-gtk"
+# exec_always "redshift-gtk"
 
 # keyboard layout
 exec_always "setxkbmap -model pc104 -layout us,ru,ua -variant ,, -option grp:alt_shift_toggle"
@@ -121,7 +115,7 @@ bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod4+h split h
+bindsym Mod4+s split h
 
 # split in vertical orientation
 bindsym Mod4+v split v
@@ -130,7 +124,7 @@ bindsym Mod4+v split v
 bindsym Mod4+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod4+s layout stacking
+# bindsym Mod4+s layout stacking
 bindsym Mod4+w layout tabbed
 bindsym Mod4+e layout toggle split
 
