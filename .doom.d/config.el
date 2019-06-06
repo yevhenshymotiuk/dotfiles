@@ -52,13 +52,13 @@
         ("T2A" "fontenc" t)))
 
 
-;; Swoop
-(map! (:after swoop
-        (:map swoop-map
-          "C-j" 'swoop-action-goto-line-next
-          "C-k" 'swoop-action-goto-line-prev)))
+;; Swiper
+;; (map! (:after swoop
+;;         (:map swoop-map
+;;           "C-j" 'swoop-action-goto-line-next
+;;           "C-k" 'swoop-action-goto-line-prev)))
 
-(setq swoop-font-size-change: nil)
+;; (setq swoop-font-size-change: nil)
 
 
 ;; term
@@ -78,9 +78,8 @@
     (cond
         ((not (get-buffer-window "*terminal*"))
         (progn
-            (doom/open-scratch-buffer)
+            (pop-to-buffer (save-window-excursion (term "/bin/zsh")))
             (evil-window-set-height 15)
-            (term "/bin/zsh")
             (evil-window-prev 1)
             (term-send-cd)
             (select-window (get-buffer-window "*terminal*"))))
@@ -90,7 +89,12 @@
                 (select-window (get-buffer-window "*terminal*"))))))
 
 
+;; (defun open-popup-terminal()
+;;     (interactive)
+;;     (+term/open-popup-in-project)
+;;     (evil-window-set-height 15))
+
 ;; <leader>
 (map! :leader
       :desc "Open terminal" "'" 'open-terminal
-      :desc "Open swoop" "S" 'swoop)
+      :desc "Open swiper" "S" 'swiper)
