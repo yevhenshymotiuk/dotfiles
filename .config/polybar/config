@@ -53,7 +53,7 @@ font-2 = FontAwesome:pixelsize=10;1
 
 modules-left = workspaces
 modules-center =
-modules-right = volume xkeyboard wlan battery date time
+modules-right = brightness volume xkeyboard wlan battery date time
 
 tray-position = right
 tray-padding = 2
@@ -91,6 +91,11 @@ cursor-scroll = ns-resize
     label-layout = %layout%
     label-layout-padding = 0
     label-layout-foreground = #8ABEB7
+
+    label-indicator-padding = 2
+    label-indicator-margin = 1
+    label-indicator-background = ${colors.secondary}
+    label-indicator-underline = ${colors.secondary}
 
 
 [module/filesystem]
@@ -141,7 +146,7 @@ label-empty-padding = 2
     ; focused = Active workspace on focused monitor
     label-focused = %index%
     label-focused-background = background
-    label-focused-foreground = #CC6666
+    ; label-focused-foreground = #CC6666
     label-focused-underline = #CC6666
     label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -178,26 +183,24 @@ label-empty-padding = 2
     label-song-ellipsis = true
 
 
-[module/xbacklight]
+[module/brightness]
     type = internal/xbacklight
 
-    format = <label> <bar>
-    label = BL
+    ; ramp-0 = 🌕
+    ; ramp-1 = 🌔
+    ; ramp-2 = 🌓
+    ; ramp-3 = 🌒
+    ; ramp-4 = 
 
-    bar-width = 10
-    bar-indicator = |
-    bar-indicator-foreground = #fff
-    bar-indicator-font = 2
-    bar-fill = ─
-    bar-fill-font = 2
-    bar-fill-foreground = #9f78e1
-    bar-empty = ─
-    bar-empty-font = 2
-    bar-empty-foreground = ${colors.foreground-alt}
+    label = "  %percentage%"
+    format = <label>
+
+    format-foreground = #ffff99
+
 
 
 [module/backlight-acpi]
-    inherit = module/xbacklight
+    inherit = module/brightness
     type = internal/backlight
     card = intel_backlight
 
@@ -363,7 +366,7 @@ label-empty-padding = 2
 
 [module/battery]
     type          = internal/battery
-    full-at       = 98
+    full-at       = 100
     battery       = BAT0
     adapter       = AC0
     poll-interval = 5
