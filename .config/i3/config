@@ -1,28 +1,6 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# font
 font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn't scale on retina/hidpi displays.
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -40,7 +18,6 @@ for_window [class="^.*"] border pixel 3
 client.focused #353439 #993399 #7B9F35
 
 # GAPS
-
 gaps inner 5
 gaps outer 3
 smart_gaps on
@@ -61,12 +38,8 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 # kill focused window
 bindsym Mod4+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym Mod4+d exec rofi -show drun 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
+# start rofi
+bindsym Mod4+d exec rofi -show drun
 
 # desktop wallpaper
 exec_always feh --bg-scale ~/Downloads/wall3.jpg
@@ -163,7 +136,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-
 # switch to workspace
 bindsym Mod4+1 workspace $ws1
 bindsym Mod4+2 workspace $ws2
@@ -190,31 +162,25 @@ bindsym Mod4+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym Mod4+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
         bindsym Down        resize grow height 10 px or 10 ppt
         bindsym Up          resize shrink height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or Mod4+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym Mod4+r mode "default"
@@ -222,20 +188,4 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# bar {
-#         status_command i3status
-# }
-
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-####################################################################

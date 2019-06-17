@@ -14,3 +14,8 @@
 (package! lsp-dart)
 (package! web-mode)
 (package! pyimport)
+(package! fontawesome)
+(package! fish-mode)
+(package! fish-completion)
+(package! emmet-mode)
+(package! django-mode)

@@ -10,15 +10,23 @@
 (setq doom-theme 'doom-peacock)
 
 
-;; Key-chords
+;; key-chords
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "fd" 'evil-normal-state)
 
 
-;; Web-mode
+;; web-mode
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 (sp-local-pair 'web-mode "{" "}" :actions nil)
+
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'django-html-mode-hook 'web-mode)
+
+(map! (:after web-mode
+        (:map web-mode-map
+          "TAB" nil
+          "TAB" 'emmet-expand-yas)))
 
 
 ;; Company
@@ -34,7 +42,7 @@
           "TAB" 'company-complete-selection)))
 
 
-;; Cursor
+;; cursor
 (setq cursor-color "palegoldenrod")
 
 
@@ -64,8 +72,7 @@
 ;; term
 (defun current-directory()
     "Returns current directory"
-    (interactive)
-    (message "%s" (file-name-directory (buffer-file-name ))))
+    (file-name-directory (buffer-file-name )))
 
 (defun term-send-cd()
     (term-send-string
@@ -73,28 +80,30 @@
         (format "cd %s\n%s\n" (current-directory) "clear")))
 
 (defun open-terminal()
-    "Opens terminal in a new window."
+    "Opens terminal in a new window"
     (interactive)
     (cond
         ((not (get-buffer-window "*terminal*"))
         (progn
             (pop-to-buffer (save-window-excursion (term "/bin/zsh")))
-            (evil-window-set-height 15)
-            (evil-window-prev 1)
-            (term-send-cd)
-            (select-window (get-buffer-window "*terminal*"))))
+            (evil-window-set-height 15)))
 
         (t (progn
                 (term-send-cd)
                 (select-window (get-buffer-window "*terminal*"))))))
 
+(defun open-popup-terminal()
+    (interactive)
+    (+term/toggle)
+    (evil-window-set-height 15))
 
-;; (defun open-popup-terminal()
-;;     (interactive)
-;;     (+term/open-popup-in-project)
-;;     (evil-window-set-height 15))
 
 ;; <leader>
 (map! :leader
       :desc "Open terminal" "'" 'open-terminal
-      :desc "Open swiper" "S" 'swiper)
+      :desc "Open swiper" "S" 'swiper
+      :desc "Terminal in popup" "o T" 'open-popup-terminal)
+
+
+;; python
+(add-hook 'python-mode-hook (λ! (electric-indent-local-mode -1)))
