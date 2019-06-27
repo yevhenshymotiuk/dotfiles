@@ -16,9 +16,12 @@
 
 
 ;; web-mode
+(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 
 (sp-local-pair 'web-mode "{" "}" :actions nil)
+(sp-local-pair 'web-mode "<" ">" :actions nil)
 
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'django-html-mode-hook 'web-mode)
@@ -94,7 +97,7 @@
 
 (defun open-popup-terminal()
     (interactive)
-    (+term/toggle)
+    (+term/toggle t)
     (evil-window-set-height 15))
 
 
@@ -102,8 +105,14 @@
 (map! :leader
       :desc "Open terminal" "'" 'open-terminal
       :desc "Open swiper" "S" 'swiper
-      :desc "Terminal in popup" "o T" 'open-popup-terminal)
+      :desc "Terminal in popup" "o t" 'open-popup-terminal)
 
 
 ;; python
 (add-hook 'python-mode-hook (λ! (electric-indent-local-mode -1)))
+
+
+;; yasnippet
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/snippets")
