@@ -50,7 +50,7 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gp='git push'
 alias gd='git diff'
-alias go='git checkout'
+# alias go='git checkout'
 
 # yadm
 alias ys='yadm status'
@@ -64,3 +64,12 @@ alias blist='bluetoothctl list'
 
 # ruby
 export PATH="$PATH:/home/yevhens/.gem/ruby/2.6.0/bin"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# flatpak
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/home/yevhens/.local/share/flatpak/exports/share"
+
+# browser
+export BROWSER="qutebrowser"

@@ -10,15 +10,15 @@
 (setq doom-theme 'doom-peacock)
 
 
-;; key-chords
-(key-chord-mode 1)
-(key-chord-define evil-insert-state-map  "fd" 'evil-normal-state)
+;; evil-escape-key-sequence
+(setq evil-escape-key-sequence "fd")
 
 
 ;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 (sp-local-pair 'web-mode "{" "}" :actions nil)
 (sp-local-pair 'web-mode "<" ">" :actions nil)
@@ -38,7 +38,6 @@
 (setq company-idle-delay 0.2
       company-minimum-prefix-length 2)
 
-
 (map! (:after company
         (:map company-active-map
           "<tab>" nil
@@ -47,6 +46,7 @@
 
 ;; cursor
 (setq cursor-color "palegoldenrod")
+(setq s/cursor-color/+evil--default-cursor-color/ "palegoldenrod")
 
 
 ;; dart-mode
@@ -61,15 +61,6 @@
 (setq org-latex-packages-alist
       '(("AUTO" "babel" t)
         ("T2A" "fontenc" t)))
-
-
-;; Swiper
-;; (map! (:after swoop
-;;         (:map swoop-map
-;;           "C-j" 'swoop-action-goto-line-next
-;;           "C-k" 'swoop-action-goto-line-prev)))
-
-;; (setq swoop-font-size-change: nil)
 
 
 ;; term
@@ -116,3 +107,8 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/snippets")
+
+
+;; django
+(add-hook 'django-mode-hook 'python-mode)
+(setq whitespace-style (quote ()))
