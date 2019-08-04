@@ -24,28 +24,28 @@ smart_gaps on
 smart_borders on
 
 # start a terminal
-bindsym Mod4+Return exec kitty
+bindsym Mod4+Return exec "kitty"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # Media volume controls
-bindsym XF86AudioMute exec amixer sset 'Master' toggle
-bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
-bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+bindsym XF86AudioMute exec "pamixer --toggle-mute"
+bindsym XF86AudioLowerVolume exec "pamixer -d 5"
+bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
 
 # kill focused window
 bindsym Mod4+Shift+q kill
 
 # start rofi
-bindsym Mod4+d exec rofi -show drun
+bindsym Mod4+d exec "rofi -show drun"
 
 # desktop wallpaper
-exec_always feh --bg-scale ~/Downloads/wall3.jpg
+exec_always "feh --bg-scale ~/Downloads/wall3.jpg"
 
 # redshift
-# exec_always "redshift-gtk"
+# exec_always "redshift"
 
 # keyboard layout
 exec_always "setxkbmap -model pc104 -layout us,ru,ua -variant ,, -option grp:alt_shift_toggle"
@@ -54,17 +54,17 @@ exec_always "~/.local/bin/layout"
 # touchpad
 exec_always "xinput set-prop 'Asus TouchPad' 'libinput Tapping Enabled' 1"
 exec_always "xinput set-prop 'Asus TouchPad' 'libinput Accel Speed' 0.5"
-bindsym XF86TouchpadToggle exec touchpad-toggle
+bindsym XF86TouchpadToggle exec "touchpad-toggle"
 
 # USB mouse
 exec_always "xinput set-prop 'Logitech USB Receiver Mouse' 'libinput Accel Speed' 0.5"
 
 # nm-applet
-exec_always nm-applet
+exec_always "nm-applet"
 
 # making screenshots
-bindsym Mod4+Print exec ~/.local/bin/maim.sh
-bindsym Mod4+Shift+Print exec ~/.local/bin/maim.sh -s
+bindsym Mod4+Print exec "~/.local/bin/maim.sh"
+bindsym Mod4+Shift+Print exec "~/.local/bin/maim.sh -s"
 
 # change focus
 bindsym Mod4+$left focus left
