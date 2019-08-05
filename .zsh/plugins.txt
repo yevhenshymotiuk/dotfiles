@@ -1,0 +1,7 @@
+zdharma/fast-syntax-highlighting
+zdharma/history-search-multi-word
+denysdovhan/spaceship-prompt spaceship
+sorin-ionescu/prezto
+sorin-ionescu/prezto folder:modules/git
+sorin-ionescu/prezto folder:modules/completion
+zsh-users/zsh-history-substring-search

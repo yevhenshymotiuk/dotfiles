@@ -1,0 +1,12 @@
+export PATH="/home/yevhens/emsdk:$PATH"
+export PATH="/home/yevhens/emsdk/clang/e1.38.30_64bit:$PATH"
+export PATH="/home/yevhens/emsdk/node/8.9.1_64bit/bin:$PATH"
+export PATH="/home/yevhens/emsdk/emscripten/1.38.30:$PATH"
+
+export EMSDK="/home/yevhens/emsdk"
+export EM_CONFIG="/home/yevhens/.emscripten"
+export LLVM_ROOT="/home/yevhens/emsdk/clang/e1.38.30_64bit"
+export EMSCRIPTEN_NATIVE_OPTIMIZER="/home/yevhens/emsdk/clang/e1.38.30_64bit/optimizer"
+export BINARYEN_ROOT="/home/yevhens/emsdk/clang/e1.38.30_64bit/binaryen"
+export EMSDK_NODE="/home/yevhens/emsdk/node/8.9.1_64bit/bin/node"
+export EMSCRIPTEN="/home/yevhens/emsdk/emscripten/1.38.30"
