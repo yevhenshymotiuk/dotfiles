@@ -42,7 +42,7 @@ bindsym Mod4+Shift+q kill
 bindsym Mod4+d exec "rofi -show drun"
 
 # desktop wallpaper
-exec_always "feh --bg-scale ~/Downloads/wall3.jpg"
+exec_always "feh --bg-scale ~/Wallpapers/wall.jpg"
 
 # redshift
 # exec_always "redshift"
