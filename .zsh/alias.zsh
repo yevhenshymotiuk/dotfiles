@@ -18,7 +18,7 @@ alias yp="yadm push"
 
 # bluetoothctl
 alias blist="bluetoothctl list"
-alias bcon="bluetoothctl connect"
+alias bcon="bluetoothctl power on && bluetoothctl connect"
 alias bdcon="bluetoothctl disconnect"
 
 # doctl

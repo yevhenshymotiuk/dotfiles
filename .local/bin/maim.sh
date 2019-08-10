@@ -13,4 +13,5 @@ if [ "$#" == 0 ]; then
   maim --capturebackground ~/screen.png --hidecursor
 fi
 
+cat "$FILE" | xclip -selection clipboard -target image/png
 notify-send "Screenshot was saved to" "$FILE"

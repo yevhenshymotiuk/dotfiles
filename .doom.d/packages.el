@@ -26,3 +26,5 @@
 (package! yasnippet-snippets)
 (package! bind-key)
 (package! fd-dired)
+(package! emoji-fontset)
+(package! dynamic-fonts)
