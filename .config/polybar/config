@@ -53,7 +53,7 @@ font-2 = FontAwesome:pixelsize=10;1
 
 modules-left = i3 bspwm
 modules-center =
-modules-right = volume xkeyboard wlan battery date time
+modules-right = brightness volume xkeyboard wlan battery date time
 
 tray-position = right
 tray-padding = 2
@@ -164,7 +164,8 @@ cursor-scroll = ns-resize
 
 
 [module/brightness]
-    type = internal/xbacklight
+    type = internal/backlight
+    card = intel_backlight
 
     ; ramp-0 = 🌕
     ; ramp-1 = 🌔

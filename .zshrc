@@ -6,3 +6,7 @@ for f in "$HOME"/.zsh/**/*.zsh; do
 done
 
 [[ $DISPLAY ]] || startx
+
+wd() {
+  . /home/yevhens/.local/bin/wd/wd.sh
+}
