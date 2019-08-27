@@ -28,3 +28,4 @@
 (package! fd-dired)
 (package! emoji-fontset)
 (package! dynamic-fonts)
+(package! cython-mode)

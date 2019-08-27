@@ -18,6 +18,7 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
 (sp-local-pair 'web-mode "{" "}" :actions nil)
 (sp-local-pair 'web-mode "<" ">" :actions nil)

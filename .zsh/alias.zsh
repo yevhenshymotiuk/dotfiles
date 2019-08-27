@@ -20,9 +20,11 @@ alias yp="yadm push"
 alias blist="bluetoothctl list"
 alias bcon="bluetoothctl power on && bluetoothctl connect"
 alias bdcon="bluetoothctl disconnect"
+alias bres="sudo systemctl restart bluetooth"
 
 # doctl
 alias dossh='doctl compute ssh'
 
 # ls
 alias ls='exa'
+alias vim='nvim'
