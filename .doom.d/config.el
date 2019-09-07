@@ -14,7 +14,6 @@
 
 
 ;; web-mode
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
@@ -112,3 +111,7 @@
 ;; django
 (add-hook 'django-mode-hook 'python-mode)
 (setq whitespace-style (quote ()))
+
+
+;; flycheck
+(setq-default flycheck-disabled-checkers '(python-pylint))

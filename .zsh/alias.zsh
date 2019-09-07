@@ -28,3 +28,6 @@ alias dossh='doctl compute ssh'
 # ls
 alias ls='exa'
 alias vim='nvim'
+
+# poetry
+alias pshell='. "$(dirname $(poetry run which python))/activate"'

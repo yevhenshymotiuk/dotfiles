@@ -11,7 +11,6 @@
 (package! auto-complete)
 (package! dart-mode)
 (package! swoop)
-(package! lsp-dart)
 (package! web-mode)
 (package! pyimport)
 (package! fontawesome)
