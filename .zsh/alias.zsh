@@ -30,4 +30,7 @@ alias ls='exa'
 alias vim='nvim'
 
 # poetry
-alias pshell='. "$(dirname $(poetry run which python))/activate"'
+alias pshell='source "$(dirname $(poetry run which python))/activate"'
+
+# venv
+alias deac='deactivate'
