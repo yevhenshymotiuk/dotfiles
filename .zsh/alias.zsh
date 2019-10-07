@@ -21,6 +21,7 @@ alias blist="bluetoothctl list"
 alias bcon="bluetoothctl power on && bluetoothctl connect"
 alias bdcon="bluetoothctl disconnect"
 alias bres="sudo systemctl restart bluetooth"
+alias brcon="bres && bcon"
 
 # doctl
 alias dossh='doctl compute ssh'

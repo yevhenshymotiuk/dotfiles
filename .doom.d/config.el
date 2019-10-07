@@ -5,6 +5,7 @@
 ;; Font
 (setq doom-font (font-spec :family "Fira Code" :size 15))
 
+
 ;; Theme
 (setq doom-theme 'doom-peacock)
 
@@ -18,6 +19,7 @@
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
 (sp-local-pair 'web-mode "{" "}" :actions nil)
 (sp-local-pair 'web-mode "<" ">" :actions nil)
@@ -102,11 +104,9 @@
 (add-hook 'python-mode-hook (λ! (electric-indent-local-mode -1)))
 
 
-;; yasnippet
+;; snippets
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/snippets")
-
+(doom-snippets-initialize)
 
 ;; django
 (add-hook 'django-mode-hook 'python-mode)
@@ -115,3 +115,36 @@
 
 ;; flycheck
 (setq-default flycheck-disabled-checkers '(python-pylint))
+
+
+;; agenda
+(setq org-agenda-files '("~/Documents/org/"))
+
+(setq org-agenda-custom-commands
+      '(("c" "Custom agenda view"
+         ((agenda ""
+            ((org-agenda-overriding-header "Today's agenda")
+             (org-agenda-start-day "4d")
+             (org-agenda-span 1)))
+          (agenda "" ((org-agenda-overriding-header "10 days' agenda")))
+          (alltodo "" ((org-agenda-overriding-header "All tasks")))))))
+
+
+;; ligatures
+(when (featurep! :ui pretty-code)
+  (after! org
+    (set-pretty-symbols! 'org-mode
+      :name "#+NAME:"
+      :src_block "#+BEGIN_SRC"
+      :src_block_end "#+END_SRC"
+      :alist '(("[ ]" . "")
+               ("[X]" . "")
+               ("[-]" . "")
+               ("SCHEDULED:" . "")
+               ("DEADLINE:" . "")
+               ("#+begin_src" . "«")
+               ("#+end_src" . "»")))))
+
+
+;; plantuml
+(setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
