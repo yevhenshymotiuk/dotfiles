@@ -21,7 +21,7 @@
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
-(sp-local-pair 'web-mode "{" "}" :actions nil)
+;; (sp-local-pair 'web-mode "{" "}" :actions nil)
 (sp-local-pair 'web-mode "<" ">" :actions nil)
 
 (add-hook 'web-mode-hook 'emmet-mode)
@@ -80,7 +80,7 @@
     (cond
         ((not (get-buffer-window "*terminal*"))
         (progn
-            (pop-to-buffer (save-window-excursion (term "/bin/zsh")))
+            (pop-to-buffer (save-window-excursion (+term/here)))
             (evil-window-set-height 15)))
 
         (t (progn
@@ -93,11 +93,20 @@
     (evil-window-set-height 15))
 
 
+;; Trello
+;;
+(defun org-trello-sync-buffer-from-trello()
+    (interactive)
+    (org-trello-sync-buffer t))
+
+
+
 ;; <leader>
 (map! :leader
-      :desc "Open terminal" "'" 'open-terminal
       :desc "Open swiper" "S" 'swiper
-      :desc "Terminal in popup" "o t" 'open-popup-terminal)
+      :desc "Toggle terminal in popup" "o t" 'open-popup-terminal
+      :desc "Open terminal here" "o T" 'open-terminal
+      :desc "Open mu4e" "m" 'mu4e)
 
 
 ;; python
@@ -114,7 +123,7 @@
 
 
 ;; flycheck
-(setq-default flycheck-disabled-checkers '(python-pylint))
+(setq-default flycheck-disabled-checkers '(python-pylint python-pycompile python-mypy))
 
 
 ;; agenda
@@ -139,7 +148,7 @@
       :src_block_end "#+END_SRC"
       :alist '(("[ ]" . "")
                ("[X]" . "")
-               ("[-]" . "")
+               ("[-]" . "")
                ("SCHEDULED:" . "")
                ("DEADLINE:" . "")
                ("#+begin_src" . "«")
@@ -148,3 +157,13 @@
 
 ;; plantuml
 (setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
+
+
+;; mu4e
+(after! mu4e
+  (setq mu4e-get-mail-command "/home/yevhens/.local/bin/offlineimap.sh")
+  (setq mu4e-update-interval 300))
+
+(mu4e-alert-set-default-style 'libnotify)
+(add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+(add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)

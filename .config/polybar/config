@@ -21,6 +21,7 @@
     primary = #ffb52a
     secondary = #e60053
     alert = #bd2c40
+    battery-red = #BC584F
 
 
 [bar/example]
@@ -79,7 +80,7 @@ cursor-scroll = ns-resize
     type = internal/xkeyboard
     blacklist-0 = num lock
 
-    format-prefix = "  "
+    format-prefix = "  "
     format-prefix-padding = 1
     format-prefix-foreground = #8ABEB7
 
@@ -87,8 +88,7 @@ cursor-scroll = ns-resize
     label-layout-padding = 0
     label-layout-foreground = #8ABEB7
 
-    label-indicator-padding = 2
-    label-indicator-margin = 1
+    label-indicator-padding = 0
     label-indicator-background = ${colors.secondary}
     label-indicator-underline = ${colors.secondary}
 
@@ -190,16 +190,16 @@ cursor-scroll = ns-resize
 
     format-connected = <label-connected>
 
-    format-connected-prefix            = " "
-    format-connected-prefix-foreground = #B294BB
+    format-connected-prefix            = " "
+    format-connected-prefix-foreground = #B051CE
     format-connected-prefix-padding    = 1
 
     label-connected            = " %essid% "
-    label-connected-foreground = #B294BB
+    label-connected-foreground = #B051CE
     label-connected-padding    = 0
 
-    ramp-signal-foreground    = #B294BB
-    ramp-connected-foreground = #B294BB
+    ramp-signal-foreground    = #B051CE
+    ramp-connected-foreground = #B051CE
     ramp-signal-padding       = 1
 
     format-disconnected = <label-disconnected>
@@ -300,32 +300,32 @@ cursor-scroll = ns-resize
 
     format-charging = <label-charging>
 
-    format-charging-prefix            = ""
-    format-charging-prefix-foreground = #81A2BE
+    format-charging-prefix            = ""
+    format-charging-prefix-foreground = ${colors.battery-red}
     format-charging-prefix-padding    = 0
 
     label-charging            = "%percentage%%"
-    label-charging-foreground = #81A2BE
+    label-charging-foreground = ${colors.battery-red}
     label-charging-padding    = 2
 
     format-discharging = <label-discharging>
 
-    format-discharging-prefix            = ""
-    format-discharging-prefix-foreground = #81A2BE
+    format-discharging-prefix            = ""
+    format-discharging-prefix-foreground = ${colors.battery-red}
     format-discharging-prefix-padding    = 0
 
     label-discharging            = "%percentage%%"
-    label-discharging-foreground = #81A2BE
+    label-discharging-foreground = ${colors.battery-red}
     label-discharging-padding    = 2
 
     format-full = <label-full>
 
-    format-full-prefix            = " "
-    format-full-prefix-foreground = #81A2BE
+    format-full-prefix            = ""
+    format-full-prefix-foreground = ${colors.battery-red}
     format-full-prefix-padding    = 0
 
     label-full            = "%percentage%%"
-    label-full-foreground = #81A2BE
+    label-full-foreground = ${colors.battery-red}
     label-full-padding    = 2
 
 

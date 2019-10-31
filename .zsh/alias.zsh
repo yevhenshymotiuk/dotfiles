@@ -35,3 +35,6 @@ alias pshell='source "$(dirname $(poetry run which python))/activate"'
 
 # venv
 alias deac='deactivate'
+
+# emulator
+alias floating_emulator='flutter emulators --launch Pixel_3_XL && i3-msg "[id=$(xdotool getactivewindow)] floating enable"'

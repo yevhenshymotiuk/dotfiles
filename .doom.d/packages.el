@@ -28,3 +28,6 @@
 (package! cython-mode)
 (package! plantuml-mode)
 (package! elixir-yasnippets)
+(package! org-trello)
+(package! annalist)
+(package! mu4e-alert)

@@ -2,16 +2,29 @@
 
 FILE="/home/yevhens/screen.png"
 
-while getopts s opt; do
+while getopts "s" opt; do
     case "$opt" in
         s)
-            maim --select "$FILE" --hidecursor;;
+            SELECT=true
     esac
 done
 
-if [ "$#" == 0 ]; then
-  maim --capturebackground ~/screen.png --hidecursor
+options=("Default" "Imgur")
+choice=$(printf "%s\n" "${options[@]}" | rofi -dmenu);
+[ $? = 0 ] || exit
+
+if [ "$SELECT" == true ]; then
+    maim --select "$FILE" --hidecursor
+else
+    maim --capturebackground "$FILE" --hidecursor
 fi
 
-cat "$FILE" | xclip -selection clipboard -target image/png
+case $choice in
+    "Default")
+        cat "$FILE" | xclip -selection clipboard -target image/png;;
+    "Imgur")
+        notify-send "Uploading to imgur..."
+        imgur "$FILE";;
+esac
+
 notify-send "Screenshot was saved to" "$FILE"

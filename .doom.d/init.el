@@ -132,7 +132,7 @@
         +protocol)       ; Support for org-protocol:// links
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
-       ;;plantuml          ; diagrams for confusing people more
+       ;; plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        python            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
@@ -149,7 +149,7 @@
        ;;vala              ; GObjective-C
 
        :email
-       ;;(mu4e +gmail)       ; WIP
+       (mu4e +gmail)       ; WIP
        ;;notmuch             ; WIP
        ;;(wanderlust +gmail) ; WIP
 
@@ -184,3 +184,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "DarkGoldenrod1")))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 25))
