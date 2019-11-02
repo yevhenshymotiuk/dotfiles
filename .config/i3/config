@@ -60,7 +60,7 @@ bindsym XF86TouchpadToggle exec "touchpad-toggle"
 exec_always "xinput set-prop 'Logitech USB Receiver Mouse' 'libinput Accel Speed' 0.5"
 
 # nm-applet
-exec_always "nm-applet"
+# exec_always "nm-applet"
 
 # making screenshots
 bindsym Mod4+Print exec "~/.local/bin/maim.sh"
