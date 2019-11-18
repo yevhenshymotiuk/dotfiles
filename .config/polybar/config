@@ -12,17 +12,17 @@
 ;==========================================================
 
 [colors]
-    ;background = ${xrdb:color0:#222}
-    background = #222
-    background-alt = #444
-    ;foreground = ${xrdb:color7:#222}
-    foreground = #dfdfdf
-    foreground-alt = #555
-    primary = #ffb52a
-    secondary = #e60053
-    alert = #bd2c40
-    battery-red = #BC584F
-    date-and-time = #E57375
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+battery-red = #BC584F
+date-and-time = #E57375
 
 
 [bar/example]
@@ -78,257 +78,257 @@ cursor-scroll = ns-resize
 
 
 [module/xkeyboard]
-    type = internal/xkeyboard
-    blacklist-0 = num lock
+type = internal/xkeyboard
+blacklist-0 = num lock
 
-    format-prefix = "  "
-    format-prefix-padding = 0
-    format-prefix-foreground = #58C7DD
+format-prefix = "  "
+format-prefix-padding = 0
+format-prefix-foreground = #58C7DD
 
-    label-layout = %layout%
-    label-layout-padding = 0
-    label-layout-foreground = #58C7DD
+label-layout = %layout%
+label-layout-padding = 0
+label-layout-foreground = #58C7DD
 
-    label-indicator-padding = 0
-    label-indicator-background = ${colors.secondary}
-    label-indicator-underline = ${colors.secondary}
+label-indicator-padding = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
 
 
 [module/bspwm]
-    type = internal/bspwm
+type = internal/bspwm
 
-    label-focused = %index%
-    label-focused-background = ${colors.background-alt}
-    label-focused-underline= ${colors.primary}
-    label-focused-padding = 2
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
 
-    label-occupied = %index%
-    label-occupied-padding = 2
+label-occupied = %index%
+label-occupied-padding = 2
 
-    label-urgent = %index%!
-    label-urgent-background = ${colors.alert}
-    label-urgent-padding = 2
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
-    label-empty = %index%
-    label-empty-foreground = ${colors.foreground-alt}
-    label-empty-padding = 2
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
 
 
 [module/i3]
-    type = internal/i3
+type = internal/i3
 
-    ws-icon-default = ws
-    ws-icon-0 = 1;
-    ws-icon-1 = 2;
-    ws-icon-2 = 3;
-    ws-icon-3 = 4;
-    ws-icon-4 = 5;
-    ws-icon-5 = 6;6
-    ws-icon-6 = 7;7
-    ws-icon-7 = 8;8
-    ws-icon-8 = 9;9
-    ws-icon-9 = 10;10
+ws-icon-default = ws
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
 
 
-    format = <label-state> <label-mode>
-    index-sort = true
-    wrapping-scroll = false
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
 
-    ; Only show workspaces on the same output as the bar
-    ;pin-workspaces = true
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
 
-    label-mode-padding = 2
-    label-mode-foreground = #000
-    label-mode-background = ${colors.primary}
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
 
-    ; focused = Active workspace on focused monitor
-    label-focused = %icon%
-    label-focused-background = background
-    ; label-focused-foreground = #CC6666
-    label-focused-underline = #CC6666
-    label-focused-padding = ${module/bspwm.label-focused-padding}
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = background
+; label-focused-foreground = #CC6666
+label-focused-underline = #CC6666
+label-focused-padding = ${module/bspwm.label-focused-padding}
 
-    ; unfocused = Inactive workspace on any monitor
-    label-unfocused = %index%
-    label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
-    ; visible = Active workspace on unfocused monitor
-    label-visible = %index%
-    label-visible-background = ${self.label-focused-background}
-    label-visible-underline = ${self.label-focused-underline}
-    label-visible-padding = ${self.label-focused-padding}
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
 
-    ; urgent = Workspace with urgency hint set
-    label-urgent = %index%
-    label-urgent-background = ${module/bspwm.label-urgent-background}
-    label-urgent-padding = ${module/bspwm.label-urgent-padding}
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 
 [module/brightness]
-    type = internal/backlight
-    card = intel_backlight
+type = internal/backlight
+card = intel_backlight
 
-    ; ramp-0 = 🌕
-    ; ramp-1 = 🌔
-    ; ramp-2 = 🌓
-    ; ramp-3 = 🌒
-    ; ramp-4 = 
+; ramp-0 = 🌕
+; ramp-1 = 🌔
+; ramp-2 = 🌓
+; ramp-3 = 🌒
+; ramp-4 = 
 
-    label = "  %percentage%"
-    format = <label>
+label = "  %percentage%"
+format = <label>
 
-    format-foreground = #ffff99
+format-foreground = #ffff99
 
 
 [module/network]
-    type          = internal/network
-    interface     = wlp3s0
-    ping-interval = 3
+type          = internal/network
+interface     = wlp3s0
+ping-interval = 3
 
 
 [module/wlan]
-    inherit = module/network
+inherit = module/network
 
-    format-connected = <label-connected>
+format-connected = <label-connected>
 
-    format-connected-prefix            = "  "
-    format-connected-prefix-foreground = #B051CE
-    format-connected-prefix-padding    = 0
+format-connected-prefix            = " "
+format-connected-prefix-foreground = #B051CE
+format-connected-prefix-padding    = 1
 
-    label-connected            = "%essid%"
-    label-connected-foreground = #B051CE
-    label-connected-padding    = 0
+label-connected            = "%essid%"
+label-connected-foreground = #B051CE
+label-connected-padding    = 0
 
-    ramp-signal-foreground    = #B051CE
-    ramp-connected-foreground = #B051CE
-    ramp-signal-padding       = 0
+ramp-signal-foreground    = #B051CE
+ramp-connected-foreground = #B051CE
+ramp-signal-padding       = 0
 
-    format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 
-    format-disconnected-prefix            = ""
-    format-disconnected-prefix-padding    = 0
-    format-disconnected-prefix-foreground = #CC6666
+format-disconnected-prefix            = ""
+format-disconnected-prefix-padding    = 0
+format-disconnected-prefix-foreground = #CC6666
 
-    label-disconnected            = " "
-    label-disconnected-foreground = #CC6666
-    label-disconnected-padding    = 0
+label-disconnected            = " "
+label-disconnected-foreground = #CC6666
+label-disconnected-padding    = 0
 
 
 [module/eth]
-    type = internal/network
-    interface = eno1
-    interval = 3.0
+type = internal/network
+interface = eno1
+interval = 3.0
 
-    format-connected-underline = #55aa55
-    format-connected-prefix = ""
-    format-connected-prefix-foreground = ${colors.foreground-alt}
-    label-connected = %local_ip%
+format-connected-underline = #55aa55
+format-connected-prefix = ""
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
 
-    format-disconnected =
-    ;format-disconnected = <label-disconnected>
-    ;format-disconnected-underline = ${self.format-connected-underline}
-    ;label-disconnected = %ifname% disconnected
-    ;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 
 [module/date]
-    type     = internal/date
-    interval = 1.0
-    date     = %a %d/%m
-    label    = %date%
+type     = internal/date
+interval = 1.0
+date     = %a %d/%m
+label    = %date%
 
-    format         = <label>
-    format-padding = 0
+format         = <label>
+format-padding = 0
 
-    ; format-prefix            = ""
-    ; format-prefix-foreground = #B5BD68
-    ; format-prefix-padding    = 1
+; format-prefix            = ""
+; format-prefix-foreground = #B5BD68
+; format-prefix-padding    = 1
 
-    label-foreground = ${colors.date-and-time}
-    label-padding    = 0
+label-foreground = ${colors.date-and-time}
+label-padding    = 0
 
 
 [module/time]
-    type     = internal/date
-    interval = 1.0
-    time     = %H:%M
-    label    = %time%
+type     = internal/date
+interval = 1.0
+time     = %H:%M
+label    = %time%
 
-    format         = <label>
-    format-padding = 0
+format         = <label>
+format-padding = 0
 
-    ; format-prefix            = ""
-    ; format-prefix-foreground = #B5BD68
-    ; format-prefix-padding    = 1
+; format-prefix            = ""
+; format-prefix-foreground = #B5BD68
+; format-prefix-padding    = 1
 
-    label-foreground = ${colors.date-and-time}
-    label-padding    = 0
+label-foreground = ${colors.date-and-time}
+label-padding    = 0
 
 
 [module/volume]
-    type          = internal/pulseaudio
+type          = internal/pulseaudio
 
-    ramp-volume-0 = "  "
-    ramp-volume-1 = "  "
-    ramp-volume-2 = "  "
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
 
-    ramp-volume-foreground = #F0C674
-    ramp-headphones-0 = ""
+ramp-volume-foreground = #F0C674
+ramp-headphones-0 = ""
 
-    mapped = true
+mapped = true
 
-    label-volume            = "%percentage%"
-    label-volume-foreground = #F0C674
-    label-volume-padding    = 0
+label-volume            = "%percentage%"
+label-volume-foreground = #F0C674
+label-volume-padding    = 0
 
-    format-volume = <ramp-volume><label-volume>
-    ramp-volume-padding = 0
-    format-volume-padding = 2
+format-volume = <ramp-volume><label-volume>
+ramp-volume-padding = 0
+format-volume-padding = 2
 
-    format-muted = <label-muted>
-    format-muted-padding  = 0
+format-muted = <label-muted>
+format-muted-padding  = 0
 
-    label-muted            = "  0"
-    label-muted-foreground = #F0C674
-    label-muted-padding    = 2
+label-muted            = "  0"
+label-muted-foreground = #F0C674
+label-muted-padding    = 2
 
 
 [module/battery]
-    type          = internal/battery
-    full-at       = 100
-    battery       = BAT0
-    adapter       = AC0
-    poll-interval = 5
+type          = internal/battery
+full-at       = 100
+battery       = BAT0
+adapter       = AC0
+poll-interval = 5
 
-    format-charging = <label-charging>
+format-charging = <label-charging>
 
-    format-charging-prefix            = " "
-    format-charging-prefix-foreground = ${colors.battery-red}
-    format-charging-prefix-padding    = 1
+format-charging-prefix            = " "
+format-charging-prefix-foreground = ${colors.battery-red}
+format-charging-prefix-padding    = 1
 
-    label-charging            = "%percentage%%"
-    label-charging-foreground = ${colors.battery-red}
-    label-charging-padding    = 0
+label-charging            = "%percentage%%"
+label-charging-foreground = ${colors.battery-red}
+label-charging-padding    = 0
 
-    format-discharging = <label-discharging>
+format-discharging = <label-discharging>
 
-    format-discharging-prefix            = " "
-    format-discharging-prefix-foreground = ${colors.battery-red}
-    format-discharging-prefix-padding    = 1
+format-discharging-prefix            = " "
+format-discharging-prefix-foreground = ${colors.battery-red}
+format-discharging-prefix-padding    = 1
 
-    label-discharging            = "%percentage%%"
-    label-discharging-foreground = ${colors.battery-red}
-    label-discharging-padding    = 0
+label-discharging            = "%percentage%%"
+label-discharging-foreground = ${colors.battery-red}
+label-discharging-padding    = 0
 
-    format-full = <label-full>
+format-full = <label-full>
 
-    format-full-prefix            = " "
-    format-full-prefix-foreground = ${colors.battery-red}
-    format-full-prefix-padding    = 1
+format-full-prefix            = " "
+format-full-prefix-foreground = ${colors.battery-red}
+format-full-prefix-padding    = 1
 
-    label-full            = "%percentage%%"
-    label-full-foreground = ${colors.battery-red}
-    label-full-padding    = 0
+label-full            = "%percentage%%"
+label-full-foreground = ${colors.battery-red}
+label-full-padding    = 0
 
 
 [settings]
@@ -339,7 +339,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-    margin-top = 5
-    margin-bottom = 5
+margin-top = 5
+margin-bottom = 5
 
 ; vim:ft=dosini

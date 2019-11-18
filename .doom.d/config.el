@@ -21,11 +21,14 @@
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
-;; (sp-local-pair 'web-mode "{" "}" :actions nil)
+(setq web-mode-enable-auto-pairing nil)
+
+(sp-with-modes '(web-mode)
+  (sp-local-pair "%" "%" :post-handlers '(("| " "SPC"))))
+
 (sp-local-pair 'web-mode "<" ">" :actions nil)
 
 (add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'django-html-mode-hook 'web-mode)
 
 (map! (:after web-mode
         (:map web-mode-map
@@ -94,7 +97,6 @@
 
 
 ;; Trello
-;;
 (defun org-trello-sync-buffer-from-trello()
     (interactive)
     (org-trello-sync-buffer t))
@@ -105,7 +107,6 @@
 (map! :leader
       :desc "Open swiper" "S" 'swiper
       :desc "Toggle terminal in popup" "o t" 'open-popup-terminal
-      :desc "Open terminal here" "o T" 'open-terminal
       :desc "Open mu4e" "m" 'mu4e)
 
 
@@ -116,10 +117,6 @@
 ;; snippets
 (require 'yasnippet)
 (doom-snippets-initialize)
-
-;; django
-(add-hook 'django-mode-hook 'python-mode)
-(setq whitespace-style (quote ()))
 
 
 ;; flycheck
@@ -167,3 +164,11 @@
 (mu4e-alert-set-default-style 'libnotify)
 (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
 (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+
+
+;; nasm
+(require 'nasm-mode)
+(add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\)$" . nasm-mode))
+
+
+;; doom-modeline

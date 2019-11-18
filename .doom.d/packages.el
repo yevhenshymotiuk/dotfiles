@@ -14,7 +14,6 @@
 (package! web-mode)
 (package! pyimport)
 (package! fontawesome)
-(package! django-mode)
 (package! django-snippets)
 (package! gore-mode)
 (package! fish-mode)
@@ -31,3 +30,5 @@
 (package! org-trello)
 (package! annalist)
 (package! mu4e-alert)
+(package! nasm-mode)
+(package! typescript-mode)
