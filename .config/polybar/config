@@ -49,13 +49,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = xos4 Terminus:pixelsize=10;1
-font-1 = Siji:pixelsize=10;1
-font-2 = FontAwesome:pixelsize=10;1
+font-0 = xos4 Terminus:pixelsize=15;1
+font-1 = Siji:pixelsize=15;1
+font-2 = FontAwesome:pixelsize=12;1
 
 modules-left = i3 bspwm
 modules-center = date time
-modules-right = brightness volume xkeyboard wlan battery
+modules-right = volume xkeyboard wlan battery
 
 tray-position = right
 tray-padding = 2
@@ -81,17 +81,22 @@ cursor-scroll = ns-resize
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-padding = 0
 format-prefix-foreground = #58C7DD
 
-label-layout = %layout%
+label-layout = %icon%
 label-layout-padding = 0
 label-layout-foreground = #58C7DD
 
 label-indicator-padding = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+layout-icon-default = layout-icon
+layout-icon-0 = us;US
+layout-icon-1 = ru;RU
+layout-icon-2 = ua;UA
 
 
 [module/bspwm]
@@ -193,7 +198,7 @@ format-connected = <label-connected>
 
 format-connected-prefix            = " "
 format-connected-prefix-foreground = #B051CE
-format-connected-prefix-padding    = 1
+format-connected-prefix-padding    = 0
 
 label-connected            = "%essid%"
 label-connected-foreground = #B051CE
@@ -288,7 +293,7 @@ format-volume-padding = 2
 format-muted = <label-muted>
 format-muted-padding  = 0
 
-label-muted            = "  0"
+label-muted            = ""
 label-muted-foreground = #F0C674
 label-muted-padding    = 2
 
@@ -302,7 +307,7 @@ poll-interval = 5
 
 format-charging = <label-charging>
 
-format-charging-prefix            = " "
+format-charging-prefix            = ""
 format-charging-prefix-foreground = ${colors.battery-red}
 format-charging-prefix-padding    = 1
 
@@ -312,7 +317,7 @@ label-charging-padding    = 0
 
 format-discharging = <label-discharging>
 
-format-discharging-prefix            = " "
+format-discharging-prefix            = ""
 format-discharging-prefix-foreground = ${colors.battery-red}
 format-discharging-prefix-padding    = 1
 
@@ -322,7 +327,7 @@ label-discharging-padding    = 0
 
 format-full = <label-full>
 
-format-full-prefix            = " "
+format-full-prefix            = ""
 format-full-prefix-foreground = ${colors.battery-red}
 format-full-prefix-padding    = 1
 

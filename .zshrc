@@ -5,4 +5,6 @@ for f in "$HOME"/.zsh/**/*.zsh; do
     source "$f"
 done
 
-[[ $DISPLAY ]] || startx
+if command -v startx >/dev/null; then
+	[[ $DISPLAY ]] || startx
+fi
