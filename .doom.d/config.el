@@ -157,13 +157,13 @@
 
 
 ;; mu4e
-(after! mu4e
-  (setq mu4e-get-mail-command "/home/yevhens/.local/bin/offlineimap.sh")
-  (setq mu4e-update-interval 300))
+;; (after! mu4e
+;;   (setq mu4e-get-mail-command "/home/yevhens/.local/bin/offlineimap.sh")
+;;   (setq mu4e-update-interval 300))
 
-(mu4e-alert-set-default-style 'libnotify)
-(add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
-(add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+;; (mu4e-alert-set-default-style 'libnotify)
+;; (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+;; (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
 
 
 ;; nasm
