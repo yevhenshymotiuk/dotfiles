@@ -24,20 +24,23 @@ alias bres="sudo systemctl restart bluetooth"
 alias brcon="bres && bcon"
 
 # doctl
-alias dossh='doctl compute ssh'
+alias dossh="doctl compute ssh"
 
 # ls
-alias ls='exa'
-alias vim='nvim'
+alias ls="exa"
+alias vim="nvim"
 
 # poetry
-alias pshell='source "$(dirname $(poetry run which python))/activate"'
+alias pshell='source "$(dirname $(poetry run which python))"/activate'
 
 # venv
-alias deac='deactivate'
+alias deac="deactivate"
 
 # emulator
-alias floating_emulator='flutter emulators --launch Pixel_3_XL && i3-msg "[id=$(xdotool getactivewindow)] floating enable"'
+alias floating_emulator="flutter emulators --launch Pixel_3_XL && i3-msg '[id=$(xdotool getactivewindow)] floating enable'"
 
 # black
-alias black='black --config=/home/yevhens/.config/black/pyproject.toml'
+alias black="black --config=/home/yevhens/.config/black/pyproject.toml"
+
+# docker
+alias docker="sudo docker"
