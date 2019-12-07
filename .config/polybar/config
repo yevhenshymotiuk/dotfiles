@@ -1,16 +1,3 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;==========================================================
-
 [colors]
 background = #1D1F28
 background-alt = #1D1F28
@@ -39,7 +26,7 @@ shade7 = #9575CD
 shade8 = #B39DDB
 
 
-[bar/example]
+[bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -71,7 +58,7 @@ font-4 = DroidSansMono Nerd Font:size=15.5;3
 
 
 modules-left = i3 bspwm
-modules-center = date time
+modules-center = date separator time
 modules-right = volume xkeyboard wlan battery
 
 tray-position = right
@@ -106,17 +93,22 @@ blacklist-0 = num lock
 label-layout = %icon%
 label-layout-padding = 0
 label-layout-foreground = ${colors.language}
-
+label-layout-underline = ${colors.red}
 layout-icon-default = layout-icon
 layout-icon-0 = us;US
 layout-icon-1 = ru;RU
 layout-icon-2 = ua;UA
 
-format = <label-layout>
+format = <label-layout><label-indicator>
 format-background = ${colors.background}
-format-underline = ${colors.red}
 format-padding = 0
 format-spacing = 0
+
+label-indicator-on-background = ${colors.red}
+label-indicator-on-padding = 1
+
+label-indicator-on = %name%
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -142,20 +134,16 @@ label-empty-padding = 2
 type = internal/i3
 
 ws-icon-default = ws
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-; ws-icon-0 = 1;Ⅰ
-; ws-icon-1 = 2;Ⅱ
-; ws-icon-2 = 3;Ⅲ
-; ws-icon-3 = 4;Ⅳ
-ws-icon-4 = 5;
-ws-icon-5 = 6;Ⅵ
-ws-icon-6 = 7;Ⅶ
-ws-icon-7 = 8;Ⅷ
-ws-icon-8 = 9;Ⅸ
-ws-icon-9 = 10;Ⅹ
+ws-icon-0 = 1;α
+ws-icon-1 = 2;β
+ws-icon-2 = 3;γ
+ws-icon-3 = 4;δ
+ws-icon-4 = 5;ε
+ws-icon-5 = 6;ζ
+ws-icon-6 = 7;η
+ws-icon-7 = 8;θ
+ws-icon-8 = 9;ι
+ws-icon-9 = 10;κ
 
 format = <label-state> <label-mode>
 index-sort = true
@@ -176,7 +164,7 @@ label-focused-underline = ${colors.red}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-unfocused-background = ${colors.background}
 
@@ -219,7 +207,7 @@ inherit = module/network
 
 format-connected = <label-connected>
 
-format-connected-prefix            = " "
+format-connected-prefix            = "直 "
 format-connected-prefix-foreground = ${colors.wlan}
 format-connected-prefix-background = ${colors.background}
 
@@ -238,11 +226,11 @@ ramp-signal-padding       = 0
 format-disconnected = <label-disconnected>
 format-disconnected-padding    = 0
 
-format-disconnected-prefix            = ""
-format-disconnected-prefix-padding    = 0
-format-disconnected-prefix-foreground = ${colors.red}
+; format-disconnected-prefix            = ""
+; format-disconnected-prefix-padding    = 0
+; format-disconnected-prefix-foreground = ${colors.red}
 
-label-disconnected            = " "
+label-disconnected            = ""
 label-disconnected-foreground = ${colors.red}
 label-disconnected-padding    = 0
 
@@ -271,7 +259,7 @@ date     = %a %d/%m
 label    = %date%
 
 format         = <label>
-format-padding = 1
+format-padding = 0
 
 ; format-prefix            = ""
 ; format-prefix-foreground = #B5BD68
@@ -288,7 +276,7 @@ time     = %H:%M
 label    = %time%
 
 format         = <label>
-format-padding = 1
+format-padding = 0
 
 ; format-prefix            = ""
 ; format-prefix-foreground = #B5BD68
@@ -328,13 +316,19 @@ content-background = ${colors.background}
 content-foreground = ${colors.shade1}
 content = "%{T5}%{T-}"
 
+[module/separator]
+type = custom/text
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+content = "|"
+
 
 [module/volume]
 type          = internal/pulseaudio
 
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
+ramp-volume-0 = "奄 "
+ramp-volume-1 = "奔 "
+ramp-volume-2 = "墳 "
 
 ramp-volume-foreground = ${colors.volume}
 ramp-headphones-0 = ""
@@ -370,22 +364,26 @@ poll-interval = 5
 
 format-charging = <label-charging>
 
-format-charging-prefix            = ""
+format-charging-prefix            = " "
 format-charging-prefix-foreground = ${colors.battery-red}
 format-charging-prefix-background = ${colors.background}
-format-charging-prefix-padding    = 1
+format-charging-prefix-padding    = 0
 
 label-charging            = "%percentage%%"
 label-charging-foreground = ${colors.battery-red}
 label-charging-background = ${colors.background}
 label-charging-padding    = 0
 
-format-discharging = <label-discharging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = %{T5}ﯜ%{T-}
+ramp-capacity-4 = 
 
-format-discharging-prefix            = ""
-format-discharging-prefix-foreground = ${colors.battery-red}
-format-discharging-prefix-background = ${colors.background}
-format-discharging-prefix-padding    = 1
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-discharging-foreground = ${colors.battery-red}
+format-discharging-background = ${colors.background}
 
 label-discharging            = "%percentage%%"
 label-discharging-foreground = ${colors.battery-red}
@@ -394,10 +392,10 @@ label-discharging-padding    = 0
 
 format-full = <label-full>
 
-format-full-prefix            = ""
+format-full-prefix            = " "
 format-full-prefix-foreground = ${colors.battery-red}
 format-full-prefix-background = ${colors.background}
-format-full-prefix-padding    = 1
+format-full-prefix-padding    = 0
 
 label-full            = "%percentage%%"
 label-full-foreground = ${colors.battery-red}

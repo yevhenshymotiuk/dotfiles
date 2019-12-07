@@ -10,6 +10,7 @@
 (package! key-chord)
 (package! auto-complete)
 (package! dart-mode)
+(package! dart-server)
 (package! swoop)
 (package! web-mode)
 (package! pyimport)
