@@ -17,6 +17,7 @@
 ;; web-mode
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
@@ -24,7 +25,8 @@
 (setq web-mode-enable-auto-pairing nil)
 
 (sp-with-modes '(web-mode)
-  (sp-local-pair "%" "%" :post-handlers '(("| " "SPC"))))
+  (sp-local-pair "%" "%" :post-handlers '(("| " "SPC")))
+  (sp-local-pair "=" "" :post-handlers '(("| " "SPC"))))
 
 (sp-local-pair 'web-mode "<" ">" :actions nil)
 

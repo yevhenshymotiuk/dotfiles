@@ -33,3 +33,5 @@
 (package! mu4e-alert)
 (package! nasm-mode)
 (package! typescript-mode)
+(package! docker)
+(package! dockerfile-mode)

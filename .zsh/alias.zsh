@@ -41,6 +41,3 @@ alias floating_emulator="flutter emulators --launch Pixel_3_XL && i3-msg '[id=$(
 
 # black
 alias black="black --config=/home/yevhens/.config/black/pyproject.toml"
-
-# docker
-alias docker="sudo docker"
