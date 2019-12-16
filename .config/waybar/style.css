@@ -54,7 +54,6 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock,
 #cpu,
 #memory,
 #temperature,
@@ -71,6 +70,12 @@ window#waybar.chromium {
     border-bottom: 3px solid #E57375;
 }
 
+#clock {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ffffff;
+}
+
 #battery {
     padding: 0 10px;
     margin: 0 4px;
@@ -78,8 +83,7 @@ window#waybar.chromium {
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #26A65B;
 }
 
 @keyframes blink {

@@ -201,3 +201,4 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
+exec_always --no-startup-id $HOME/.config/mako/launch.sh

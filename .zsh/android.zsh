@@ -1,4 +1,4 @@
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Android
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
