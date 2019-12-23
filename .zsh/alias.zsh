@@ -37,9 +37,7 @@ alias pshell='source "$(dirname $(poetry run which python))"/activate'
 alias deac="deactivate"
 
 # emulator
-alias floating_emulator="flutter emulators --launch Pixel_3_XL && i3-msg '[id=$(xdotool getactivewindow)] floating enable'"
+# alias floating_emulator="flutter emulators --launch Pixel_3_XL && i3-msg '[id=$(xdotool getactivewindow)] floating enable'"
 
 # black
 alias black="black --config=/home/yevhens/.config/black/pyproject.toml"
-
-alias sway-custom-alias="echo -e \"$(~/.cargo/bin/swaylayout)\n123\n123\""

@@ -2,7 +2,7 @@
 # ZSH_THEME="spaceship"
 ZSH_THEME=powerlevel10k/powerlevel10k
 
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -f themes/p10k.zsh ]] && source themes/p10k.zsh
 
 # spaceship
 # SPACESHIP_BATTERY_SHOW=false

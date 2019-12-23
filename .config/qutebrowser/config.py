@@ -9,7 +9,7 @@ dracula.draw.blood(c, {
         'horizontal': 8
     },
     'font': {
-        'family': 'Menlo, Terminus, Monaco, Monospace',
+        'family': 'Monaco, Monospace',
         'size': 12
     }
 })
