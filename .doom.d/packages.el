@@ -36,3 +36,4 @@
 (package! docker)
 (package! dockerfile-mode)
 (package! unicode-fonts)
+(package! sass-mode)
