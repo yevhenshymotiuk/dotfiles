@@ -35,3 +35,4 @@
 (package! typescript-mode)
 (package! docker)
 (package! dockerfile-mode)
+(package! unicode-fonts)
