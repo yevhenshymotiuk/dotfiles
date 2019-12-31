@@ -1,3 +1,10 @@
+#mode, #backlight, #network, #pulseaudio, #custom-keyboard {
+  padding: 0 10px;
+  margin: 0 4px;
+  color: #ffffff;
+  border-bottom: 3px solid #E57375;
+}
+
 * {
   border: none;
   border-radius: 0;
@@ -45,22 +52,6 @@ window#waybar.chromium {
 #mode {
   background-color: #64727D;
   border-bottom: 3px solid #ffffff;
-}
-
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#custom-keyboard,
-#network,
-#pulseaudio,
-#custom-media,
-#mode,
-#idle_inhibitor {
-  padding: 0 10px;
-  margin: 0 4px;
-  color: #ffffff;
-  border-bottom: 3px solid #E57375;
 }
 
 #clock {
