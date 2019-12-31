@@ -179,6 +179,5 @@
 
 ;; magit
 (add-hook 'magit-mode-hook 'magit-todos-mode)
-(setq magit-todos-exclude-globs '("node_modules/*", "bundles/*"))
 
 ;; (setq +pretty-code-symbols nil)
