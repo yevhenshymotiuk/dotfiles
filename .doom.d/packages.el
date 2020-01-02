@@ -1,12 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.doom.d/packages.el
 
-;;; Examples:
-;; (package! some-package)
-;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
-;; (package! builtin-package :disable t)
-
-
 (package! key-chord)
 (package! auto-complete)
 (package! dart-mode)
@@ -37,3 +31,4 @@
 (package! dockerfile-mode)
 (package! unicode-fonts)
 (package! sass-mode)
+(package! coffee-mode)

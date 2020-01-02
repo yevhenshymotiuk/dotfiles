@@ -143,19 +143,19 @@
 
 
 ;; ligatures
-;; (when (featurep! :ui pretty-code)
-;;   (after! org
-;;     (set-pretty-symbols! 'org-mode
-;;       :name "#+NAME:"
-;;       :src_block "#+BEGIN_SRC"
-;;       :src_block_end "#+END_SRC"
-;;       :alist '(("[ ]" . "")
-;;                ("[X]" . "")
-;;                ("[-]" . "")
-;;                ("SCHEDULED:" . "")
-;;                ("DEADLINE:" . "")
-;;                ("#+begin_src" . "«")
-;;                ("#+end_src" . "»")))))
+(when (featurep! :ui pretty-code)
+  (after! org
+    (set-pretty-symbols! 'org-mode
+      :name "#+NAME:"
+      :src_block "#+BEGIN_SRC"
+      :src_block_end "#+END_SRC"
+      :alist '(("[ ]" . "")
+               ("[X]" . "")
+               ("[-]" . "")
+               ("SCHEDULED:" . "")
+               ("DEADLINE:" . "")
+               ("#+begin_src" . "«")
+               ("#+end_src" . "»")))))
 
 
 ;; plantuml
