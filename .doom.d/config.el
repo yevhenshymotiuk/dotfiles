@@ -181,3 +181,6 @@
 (add-hook 'magit-mode-hook 'magit-todos-mode)
 
 ;; (setq +pretty-code-symbols nil)
+
+;; nim
+(add-hook 'nim-mode-hook '(flycheck-select-checker "nim"))
