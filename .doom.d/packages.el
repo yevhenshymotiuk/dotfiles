@@ -32,3 +32,4 @@
 (package! unicode-fonts)
 (package! sass-mode)
 (package! coffee-mode)
+(package! flycheck-nim)

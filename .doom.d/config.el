@@ -126,7 +126,11 @@
 
 
 ;; flycheck
-(setq-default flycheck-disabled-checkers '(python-pylint python-pycompile python-mypy))
+(add-hook 'nim-mode-hook (λ! (flycheck-select-checker 'nim)))
+(setq-default flycheck-disabled-checkers
+              '(python-pylint
+                python-pycompile
+                python-mypy))
 
 
 ;; agenda
@@ -181,6 +185,3 @@
 (add-hook 'magit-mode-hook 'magit-todos-mode)
 
 ;; (setq +pretty-code-symbols nil)
-
-;; nim
-(add-hook 'nim-mode-hook '(flycheck-select-checker "nim"))
