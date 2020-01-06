@@ -126,7 +126,6 @@
 
 
 ;; flycheck
-(add-hook 'nim-mode-hook (λ! (flycheck-select-checker 'nim)))
 (setq-default flycheck-disabled-checkers
               '(python-pylint
                 python-pycompile
