@@ -186,3 +186,4 @@
 ;; (setq +pretty-code-symbols nil)
 
 (add-hook 'rustic-mode-hook 'rust-mode)
+(add-hook 'rust-mode-hook 'lsp)
