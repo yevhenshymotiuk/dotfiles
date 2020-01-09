@@ -184,3 +184,5 @@
 (add-hook 'magit-mode-hook 'magit-todos-mode)
 
 ;; (setq +pretty-code-symbols nil)
+
+(add-hook 'rustic-mode-hook 'rust-mode)

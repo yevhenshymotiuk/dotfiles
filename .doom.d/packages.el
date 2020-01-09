@@ -33,3 +33,4 @@
 (package! sass-mode)
 (package! coffee-mode)
 (package! flycheck-nim)
+(package! rust-mode)
