@@ -26,9 +26,11 @@ alias brcon="bres && bcon"
 # doctl
 alias dossh="doctl compute ssh"
 
-# ls
+# utils
 alias ls="exa"
 alias vim="nvim"
+alias cat="bat"
+alias grep="rg"
 
 # poetry
 alias pshell='source "$(dirname $(poetry run which python))"/activate'
