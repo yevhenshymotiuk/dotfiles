@@ -12,6 +12,7 @@ settings:
     https://www.privat24.ua: false
   content.notifications:
     https://70.faranharbarius.com: false
+    https://coub.com: false
     https://filmora.wondershare.com: false
     https://kinotorrents.com: false
     https://mail.protonmail.com: false
