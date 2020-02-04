@@ -1,7 +1,7 @@
-def blood(c, options = {}):
+def blood(c, options={}):
     palette = {
         'background': '#282a36',
-        'background-alt': '#282a36', 
+        'background-alt': '#282a36',
         'background-attention': '#181920',
         'border': '#282a36',
         'current-line': '#44475a',
@@ -16,27 +16,61 @@ def blood(c, options = {}):
         'pink': '#ff79c6',
         'purple': '#bd93f9',
         'red': '#ff5555',
-        'yellow': '#f1fa8c'
-    }   
+        'yellow': '#f1fa8c',
+    }
 
-    spacing = options.get('spacing', {
-        'vertical': 5,
-        'horizontal': 5
-    })
+    spacing = options.get('spacing', {'vertical': 5, 'horizontal': 5})
 
-    padding = options.get('padding', {
-        'top': spacing['vertical'],
-        'right': spacing['horizontal'],
-        'bottom': spacing['vertical'],
-        'left': spacing['horizontal']
-    })
+    padding = options.get(
+        'padding',
+        {
+            'top': spacing['vertical'],
+            'right': spacing['horizontal'],
+            'bottom': spacing['vertical'],
+            'left': spacing['horizontal'],
+        },
+    )
 
-    font = options.get('font', {
-        'family': 'Menlo, "xos4 Terminus", Terminus, Monospace, Monaco, "Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Consolas, Terminal',
-        'size': 10
-    })
+    font = options.get(
+        'font',
+        {
+            'family': [
+                'Menlo',
+                'xos4 Terminus',
+                'Terminus',
+                'Monospace',
+                'Monaco',
+                'Vera Sans Mono',
+                'Andale Mono',
+                'Courier New',
+                'Courier',
+                'Liberation Mono',
+                'monospace',
+                'Consolas',
+                'Terminal',
+            ],
+            'size': 10,
+        },
+    )
 
-    monospace = font.get('family', 'Menlo, "xos4 Terminus", Terminus, Monospace, Monaco, "Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Consolas, Terminal')
+    font_family = font.get(
+        'family',
+        [
+            'Menlo',
+            'xos4 Terminus',
+            'Terminus',
+            'Monospace',
+            'Monaco',
+            'Vera Sans Mono',
+            'Andale Mono',
+            'Courier New',
+            'Courier',
+            'Liberation Mono',
+            'monospace',
+            'Consolas',
+            'Terminal',
+        ],
+    )
     font_size = font.get('size', 10)
 
     ## Background color of the completion widget category headers.
@@ -292,6 +326,8 @@ def blood(c, options = {}):
     # ## Type: QtColor
     c.colors.tabs.selected.odd.fg = palette['foreground']
 
+    c.colors.webpage.prefers_color_scheme_dark = True
+
     ## Tab padding
     c.tabs.padding = padding
     c.tabs.indicator.width = 1
@@ -301,10 +337,10 @@ def blood(c, options = {}):
     font_size_str = str(font_size) + 'pt'
     font_size_small_str = str(font_size - 1) + 'pt'
 
-    c.fonts.monospace = monospace
+    c.fonts.default_family = font_family
     c.fonts.completion.entry = font_size_str + ' monospace'
     c.fonts.completion.category = 'bold'
-    c.fonts.debug_console = font_size_str + ' monospace' 
+    c.fonts.debug_console = font_size_str + ' monospace'
     c.fonts.downloads = font_size_str + ' monospace'
     c.fonts.hints = font_size_small_str + ' monospace'
     c.fonts.keyhint = font_size_str + ' monospace'
@@ -313,7 +349,7 @@ def blood(c, options = {}):
     c.fonts.messages.warning = font_size_str + ' monospace'
     c.fonts.prompts = font_size_str + ' monospace'
     c.fonts.statusbar = font_size_small_str + ' monospace'
-    c.fonts.tabs = font_size_str  + ' monospace'
+    c.fonts.tabs = font_size_str + ' monospace'
     c.fonts.web.family.standard = ''
     c.fonts.web.family.fixed = ''
     c.fonts.web.family.serif = ''
@@ -324,4 +360,3 @@ def blood(c, options = {}):
     c.fonts.web.size.default_fixed = 13
     c.fonts.web.size.minimum = 0
     c.fonts.web.size.minimum_logical = 6
-
