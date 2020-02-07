@@ -1,30 +1,18 @@
 #!/usr/bin/env bash
 
-function start-qutebrowser {
-    if [ "$(pgrep qutebrowser)${?}" == 1 ]; then
-        swaymsg "workspace 1; exec $(which qutebrowser)"
+function start {
+    swaymsg "workspace $2; exec $(which $1)"
+}
+
+function start-if-ne {
+    if [ "$(pgrep $1)${?}" == 1 ]; then
+        start "$1" "$2"
+    else
+        echo "$1 is already opened"
     fi
 }
 
-function start-emacs {
-    if [ "$(pgrep emacs)${?}" == 1 ]; then
-        swaymsg "workspace 2; exec $(which emacs)"
-    fi
-}
-
-function start-telegram {
-    if [ "$(pgrep telegram-desktop)${?}" == 1 ]; then
-        swaymsg "workspace 3; exec $(which telegram-desktop)"
-    fi
-}
-
-function start-alacritty {
-    if [ "$(pgrep alacritty)${?}" == 1 ]; then
-        swaymsg "workspace 4; exec $(which alacritty)"
-    fi
-}
-
-start-qutebrowser
-start-emacs
-start-telegram
-start-alacritty
+start-if-ne qutebrowser 1
+start-if-ne emacs 2
+start-if-ne telegram-desktop 3
+start-if-ne alacritty 4
