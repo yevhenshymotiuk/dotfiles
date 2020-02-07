@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Start
-Comment=Opens all useful applications on system start
+Comment=Opens all useful applications on system start 
 Icon=utilities-terminal
 Terminal=false
 Exec=zsh -c /home/yevhens/.local/bin/sway-start
