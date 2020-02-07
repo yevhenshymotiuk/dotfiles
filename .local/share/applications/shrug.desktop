@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Shrug
+Comment=Copies shrug smile to the clipboard
+Icon=utilities-terminal
+Terminal=false
+Exec=zsh -c /home/yevhens/.local/bin/shrug
+Categories=Application;
