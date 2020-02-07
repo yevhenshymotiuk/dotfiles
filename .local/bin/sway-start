@@ -1,26 +1,50 @@
 #!/usr/bin/env bash
 
 function start {
-    swaymsg "workspace $2; exec $(which $1)"
-}
+    while getopts "t" opt; do
+        case "$opt" in
+            t)
+                terminal=true
+        esac
+    done
 
-function start-with-terminal {
-    swaymsg "workspace $2; exec alacritty -e $1"
+    if [ "$terminal" ]; then
+        application="$2"
+        workspace="$3"
+
+        swaymsg "workspace $workspace; exec alacritty -e $(which $application)"
+    else
+        application="$1"
+        workspace="$2"
+
+        swaymsg "workspace $workspace; exec $(which $application)"
+    fi
 }
 
 function start-if-ne {
-    if [ "$(pgrep $2)${?}" == 1 ]; then
-        while getopts "t" opt; do
-            case "$opt" in
-                t)
-                    start-with-terminal "$2" "$3"
-                    ;;
-                *)
-                    start "$2" "$3"
-            esac
-        done
+    while getopts "t" opt; do
+        case "$opt" in
+            t)
+                terminal=true
+        esac
+    done
+
+    if [ "$terminal" ]; then
+        application="$2"
+        workspace="$3"
     else
-        echo "$2 is already opened"
+        application="$1"
+        workspace="$2"
+    fi
+
+    if [ "$(pgrep $application)${?}" == 1 ]; then
+        if [ "$terminal" ]; then
+            start -t "$application" "$workspace"
+        else
+            start "$application" "$workspace"
+        fi
+    else
+        echo "$application is already opened"
     fi
 }
 
