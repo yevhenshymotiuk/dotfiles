@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+function start-qutebrowser {
+    if [ "$(pgrep qutebrowser)${?}" == 1 ]; then
+        swaymsg "workspace 1; exec $(which qutebrowser)"
+    fi
+}
+
+function start-emacs {
+    if [ "$(pgrep emacs)${?}" == 1 ]; then
+        swaymsg "workspace 2; exec $(which emacs)"
+    fi
+}
+
+function start-telegram {
+    if [ "$(pgrep telegram-desktop)${?}" == 1 ]; then
+        swaymsg "workspace 3; exec $(which telegram-desktop)"
+    fi
+}
+
+function start-alacritty {
+    if [ "$(pgrep alacritty)${?}" == 1 ]; then
+        swaymsg "workspace 4; exec $(which alacritty)"
+    fi
+}
+
+start-qutebrowser
+start-emacs
+start-telegram
+start-alacritty
