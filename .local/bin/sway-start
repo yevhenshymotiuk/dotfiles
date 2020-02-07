@@ -4,11 +4,23 @@ function start {
     swaymsg "workspace $2; exec $(which $1)"
 }
 
+function start-with-terminal {
+    swaymsg "workspace $2; exec alacritty -e $1"
+}
+
 function start-if-ne {
-    if [ "$(pgrep $1)${?}" == 1 ]; then
-        start "$1" "$2"
+    if [ "$(pgrep $2)${?}" == 1 ]; then
+        while getopts "t" opt; do
+            case "$opt" in
+                t)
+                    start-with-terminal "$2" "$3"
+                    ;;
+                *)
+                    start "$2" "$3"
+            esac
+        done
     else
-        echo "$1 is already opened"
+        echo "$2 is already opened"
     fi
 }
 
@@ -16,3 +28,4 @@ start-if-ne qutebrowser 1
 start-if-ne emacs 2
 start-if-ne telegram-desktop 3
 start-if-ne alacritty 4
+start-if-ne -t gotop 5
