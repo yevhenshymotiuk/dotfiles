@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function start {
+function run {
     while getopts "t" opt; do
         case "$opt" in
             t)
@@ -21,7 +21,7 @@ function start {
     fi
 }
 
-function start-if-ne {
+function run-if-ne {
     while getopts "t" opt; do
         case "$opt" in
             t)
@@ -39,17 +39,17 @@ function start-if-ne {
 
     if [ "$(pgrep $application)${?}" == 1 ]; then
         if [ "$terminal" ]; then
-            start -t "$application" "$workspace"
+            run -t "$application" "$workspace"
         else
-            start "$application" "$workspace"
+            run "$application" "$workspace"
         fi
     else
         echo "$application is already opened"
     fi
 }
 
-start-if-ne qutebrowser 1
-start-if-ne emacs 2
-start-if-ne telegram-desktop 3
-start-if-ne alacritty 4
-start-if-ne -t gotop 5
+run-if-ne qutebrowser 1
+run-if-ne emacs 2
+run-if-ne telegram-desktop 3
+run-if-ne alacritty 4
+run-if-ne -t gotop 5
