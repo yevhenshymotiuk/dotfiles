@@ -1,55 +1,68 @@
 #!/usr/bin/env bash
 
 function run {
-    while getopts "t" opt; do
+    local terminal
+    local not_exist
+    local application
+    local workspace
+
+    while getopts "tn" opt; do
         case "$opt" in
             t)
-                terminal=true
+                terminal=true;;
+            n)
+                not_exist=true
         esac
     done
+    OPTIND=0
 
     if [ "$terminal" ]; then
-        application="$2"
-        workspace="$3"
-
-        swaymsg "workspace $workspace; exec alacritty -e $(which $application)"
-    else
-        application="$1"
-        workspace="$2"
-
-        swaymsg "workspace $workspace; exec $(which $application)"
-    fi
-}
-
-function run-if-ne {
-    while getopts "t" opt; do
-        case "$opt" in
-            t)
-                terminal=true
-        esac
-    done
-
-    if [ "$terminal" ]; then
-        application="$2"
-        workspace="$3"
-    else
-        application="$1"
-        workspace="$2"
-    fi
-
-    if [ "$(pgrep $application)${?}" == 1 ]; then
-        if [ "$terminal" ]; then
-            run -t "$application" "$workspace"
+        if [ "$not_exist" ]; then
+            application="$3"
+            workspace="$4"
         else
-            run "$application" "$workspace"
+            application="$2"
+            workspace="$3"
         fi
     else
-        echo "$application is already opened"
+        if [ "$not_exist" ]; then
+            application="$2"
+            workspace="$3"
+        else
+            application="$1"
+            workspace="$2"
+        fi
+    fi
+
+    if [ "$not_exist" ]; then
+        if [ "$(pgrep $application)${?}" == 1 ]; then
+            if [ "$terminal" ]; then
+                run -t "$application" "$workspace"
+            else
+                run "$application" "$workspace"
+            fi
+        else
+            echo "$application is already opened"
+        fi
+    else
+        if [ "$terminal" ]; then
+            if [ "$workspace" ]; then
+                swaymsg "workspace $workspace; exec alacritty -e $(which $application)"
+            else
+                alacritty -e $(which $application)
+            fi
+        else
+            if [ "$workspace" ]; then
+                swaymsg "workspace $workspace; exec $(which $application)"
+            else
+                $application &
+            fi
+        fi
     fi
 }
 
-run-if-ne qutebrowser 1
-run-if-ne emacs 2
-run-if-ne telegram-desktop 3
-run-if-ne alacritty 4
-run-if-ne -t gotop 5
+run -n qutebrowser 1
+run -n emacs 2
+run -n telegram-desktop 3
+run -n alacritty 4
+run -n -t gotop 5
