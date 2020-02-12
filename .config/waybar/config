@@ -45,19 +45,19 @@
             "critical": 15
         },
         "format": "{icon} {capacity}",
-        "format-charging": "﫵 {capacity}",
-        "format-plugged": "﫵 {capacity}",
+        "format-charging": " {capacity}",
+        "format-plugged": " {capacity}",
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "ﯜ", ""]
+        "format-icons": ["", "", "", "ﯜ", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "直 {essid}",
+        "format-wifi": " {essid}",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "DISCONNECTED",
@@ -78,7 +78,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["奄", "奔", "墳"]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
