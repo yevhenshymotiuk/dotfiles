@@ -128,7 +128,8 @@
 
 ;; flycheck
 (setq-default flycheck-disabled-checkers
-              '(python-pycompile
+              '(python-flake8
+                python-pycompile
                 python-mypy))
 
 
