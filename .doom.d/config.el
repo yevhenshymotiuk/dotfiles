@@ -118,6 +118,7 @@
 
 ;; python
 (add-hook 'python-mode-hook (λ! (electric-indent-local-mode -1)))
+(setq pylint-options '("--rcfile=~/.config/pylint/pylintrc"))
 
 
 ;; snippets
@@ -127,8 +128,7 @@
 
 ;; flycheck
 (setq-default flycheck-disabled-checkers
-              '(python-pylint
-                python-pycompile
+              '(python-pycompile
                 python-mypy))
 
 
