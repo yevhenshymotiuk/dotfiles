@@ -17,7 +17,8 @@ persistent=yes
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
 load-plugins=
-    pylint.extensions.check_elif
+    pylint.extensions.check_elif,
+    pylint_django
 
 # Use multiple processes to speed up Pylint.
 jobs=1
@@ -61,6 +62,7 @@ disable=
     protected-access,
     too-few-public-methods,
     no-name-in-module,
+    import-outside-toplevel,
     # handled by black
     format
 
